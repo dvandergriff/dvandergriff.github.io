@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Malaka Gharib | Journalist, Cartoonist, Graphic Novelist</title>
+<meta name="description" content="Malaka Gharib is a journalist, cartoonist and graphic novelist, author of I Was Their American Dream and It Won't Always Be Like This. Book her for speaking engagements and workshops.">
+<meta property="og:title" content="Malaka Gharib">
+<meta property="og:description" content="Journalist, cartoonist and graphic novelist. Speaking engagements and zine workshops.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.malakagharib.com">
+<meta property="og:image" content="https://www.malakagharib.com/images/headshot.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbf7f1;
+    --surface: #ffffff;
+    --ink: #1e1b18;
+    --muted: #6b635b;
+    --accent: #c4432b;
+    --accent-dark: #9e3320;
+    --line: #e7dfd3;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.65;
+    font-size: 17px;
+  }
+  h1, h2, h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.2; margin: 0 0 .5em; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--accent-dark); }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  section:first-of-type { border-top: 0; }
+
+  /* Nav */
+  header.nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(251,247,241,.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 14px; gap: 16px; }
+  .brand { font-family: "Fraunces", serif; font-weight: 700; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
+  .nav nav { display: flex; gap: 18px; flex-wrap: wrap; justify-content: flex-end; }
+  .nav nav a { color: var(--ink); text-decoration: none; font-size: .92rem; font-weight: 500; }
+  .nav nav a:hover { color: var(--accent); }
+
+  /* Hero */
+  .hero { padding: 48px 0 56px; }
+  .hero .wrap { display: grid; gap: 32px; grid-template-columns: 1fr; align-items: center; }
+  .hero h1 { font-size: clamp(2.2rem, 7vw, 3.6rem); }
+  .hero .tag { font-size: 1.15rem; color: var(--muted); margin-bottom: 1.2em; }
+  .photo-frame { border-radius: var(--radius); overflow: hidden; background: #efe6d8; aspect-ratio: 4/5; max-width: 380px; width: 100%; }
+  .photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .credit { font-size: .8rem; color: var(--muted); margin-top: 8px; font-style: italic; }
+  .btn {
+    display: inline-block; background: var(--accent); color: #fff !important;
+    padding: 13px 24px; border-radius: 999px; text-decoration: none;
+    font-weight: 600; border: 0; font-size: 1rem; cursor: pointer; font-family: inherit;
+  }
+  .btn:hover { background: var(--accent-dark); }
+  .btn.ghost { background: transparent; color: var(--accent) !important; border: 2px solid var(--accent); padding: 11px 22px; margin-left: 8px; }
+  .btn.ghost:hover { background: var(--accent); color: #fff !important; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 10px; }
+  .cta-row .btn.ghost { margin-left: 0; }
+
+  /* About */
+  .about p { max-width: 720px; }
+
+  /* Books */
+  .books { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .book { text-decoration: none; color: inherit; }
+  .book .cover { aspect-ratio: 2/3; background: #efe6d8; border-radius: 8px; overflow: hidden; box-shadow: 0 6px 18px rgba(30,27,24,.15); }
+  .book .cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .book h3 { font-size: 1rem; margin: 12px 0 2px; }
+  .book span { font-size: .85rem; color: var(--muted); }
+  .arabic { margin-top: 20px; font-size: .95rem; color: var(--muted); }
+
+  /* Speaking */
+  .cards { display: grid; gap: 16px; grid-template-columns: 1fr; margin: 22px 0; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+  .card h3 { font-size: 1.1rem; }
+  .venues { color: var(--muted); font-size: .95rem; }
+
+  /* Form */
+  form { display: grid; gap: 14px; max-width: 620px; margin-top: 18px; }
+  label { font-weight: 600; font-size: .92rem; display: grid; gap: 6px; }
+  input, select, textarea {
+    font: inherit; padding: 12px 14px; border: 1px solid var(--line);
+    border-radius: 10px; background: #fff; color: var(--ink); width: 100%;
+  }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  textarea { min-height: 140px; resize: vertical; }
+  .hp { position: absolute; left: -9999px; }
+  .note { font-size: .88rem; color: var(--muted); }
+
+  /* Talk */
+  .video { aspect-ratio: 16/9; background: #231f1c; border-radius: var(--radius); display: grid; place-items: center; color: #fff; text-align: center; padding: 20px; }
+  .video iframe { width: 100%; height: 100%; border: 0; border-radius: var(--radius); }
+
+  /* Works */
+  .works { display: grid; gap: 28px; grid-template-columns: 1fr; }
+  .works h3 { font-size: 1.05rem; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; font-family: "Inter", sans-serif; font-weight: 600; margin-bottom: .6em; }
+  .works ul { list-style: none; padding: 0; margin: 0; }
+  .works li { padding: 9px 0; border-bottom: 1px solid var(--line); font-size: .97rem; }
+  .works li:last-child { border-bottom: 0; }
+  .works li small { color: var(--muted); }
+
+  footer { padding: 36px 0 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; text-align: center; }
+
+  @media (min-width: 720px) {
+    .hero .wrap { grid-template-columns: 1.3fr 1fr; }
+    .books { grid-template-columns: repeat(4, 1fr); }
+    .cards { grid-template-columns: 1fr 1fr; }
+    .works { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 520px) {
+    .nav nav { gap: 12px; }
+    .nav nav a { font-size: .85rem; }
+    .btn.ghost { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Malaka Gharib</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#books">Books</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#work">Work</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Malaka Gharib</h1>
+        <p class="tag">Journalist, cartoonist and graphic novelist.</p>
+        <div class="cta-row">
+          <a class="btn" href="#speaking">Book a speaking engagement</a>
+          <a class="btn ghost" href="#books">See my books</a>
+        </div>
+      </div>
+      <div>
+        <div class="photo-frame">
+          <img src="images/headshot.jpg" alt="Portrait of Malaka Gharib" onerror="this.style.display='none'">
+        </div>
+        <p class="credit">Photo credit: Leah Margulies</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <p>Malaka Gharib is the author of <a href="https://www.penguinrandomhouse.com/books/575400/i-was-their-american-dream-by-malaka-gharib/"><em>I Was Their American Dream</em></a>, a graphic memoir published in 2019 about being first-generation Filipino Egyptian American, which won an Arab American Book Award in 2020. In 2022, she published <a href="https://www.penguinrandomhouse.com/books/675534/it-wont-always-be-like-this-by-malaka-gharib/9781984860293"><em>It Won't Always Be Like This</em></a>, a graphic memoir about her summers in the Middle East, which was nominated for a Goodreads Choice Award.</p>
+      <p>Her comics, zines and writing have been published in the <em>Los Angeles Times</em>, <em>Catapult</em>, <em>The Believer Magazine</em>, <em>The Nib</em>, <em>The Margins</em> and <em>The New Yorker</em>. She has been profiled in <a href="https://www.washingtonpost.com/lifestyle/food/the-runcible-spoon-washingtons-little-food-zine-with-a-big-sense-of-humor/2013/06/10/67acabce-cc5c-11e2-9f1a-1a7cdee20287_story.html"><em>The Washington Post</em></a> and <a href="https://www.nytimes.com/2019/08/21/books/malaka-gharib-american-dream-creativity.html"><em>The New York Times</em></a>.</p>
+      <p>Her comics and zines are archived at the Smithsonian Institution, the New York Public Library, the Arab American Museum and Barnard College's Zine Library. Her art and writing have been exhibited at Fantagraphics Books, the National Museum of Women in the Arts, Harvard Radcliffe Institute and Vanderbilt Fine Arts Gallery.</p>
+      <p>By day, she is an editor at NPR. She lives in Nashville, Tenn., with her husband, son and Shiba Inu.</p>
+    </div>
+  </section>
+
+  <!-- BOOKS -->
+  <section id="books">
+    <div class="wrap">
+      <h2>Books</h2>
+      <div class="books">
+        <a class="book" href="https://www.penguinrandomhouse.com/books/575400/i-was-their-american-dream-by-malaka-gharib/9780525575115/">
+          <div class="cover"><img src="images/book-american-dream.jpg" alt="Cover of I Was Their American Dream: A Graphic Memoir" onerror="this.style.display='none'"></div>
+          <h3>I Was Their American Dream</h3>
+          <span>A Graphic Memoir</span>
+        </a>
+        <a class="book" href="https://www.penguinrandomhouse.com/books/675534/it-wont-always-be-like-this-by-malaka-gharib/">
+          <div class="cover"><img src="images/book-always-like-this.jpg" alt="Cover of It Won't Always Be Like This: A Graphic Memoir" onerror="this.style.display='none'"></div>
+          <h3>It Won't Always Be Like This</h3>
+          <span>A Graphic Memoir</span>
+        </a>
+        <a class="book" href="https://shop.mauzoun.com/en/i-was-their-american-dream/p1673733790">
+          <div class="cover"><img src="images/book-american-dream-arabic.jpg" alt="Arabic edition of I Was Their American Dream" onerror="this.style.display='none'"></div>
+          <h3>I Was Their American Dream</h3>
+          <span>Arabic edition</span>
+        </a>
+        <a class="book" href="https://shop.mauzoun.com/en/it-won't-always-be-like-this/p432163361">
+          <div class="cover"><img src="images/book-always-like-this-arabic.jpg" alt="Arabic edition of It Won't Always Be Like This" onerror="this.style.display='none'"></div>
+          <h3>It Won't Always Be Like This</h3>
+          <span>Arabic edition</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKING -->
+  <section id="speaking">
+    <div class="wrap">
+      <h2>Speaking &amp; Workshops</h2>
+      <p>Malaka speaks about identity, immigrant family stories, creativity and the power of comics and zines. She also leads zine workshops for universities, museums and community groups.</p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Adult audiences</h3>
+          <p>Conferences, festivals, universities and book events.</p>
+          <a href="https://authorsunbound.com/malaka-gharib">View speaker profile &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>Youth audiences</h3>
+          <p>Schools, libraries and young readers' programs.</p>
+          <a href="https://authorsoutloud.com/malaka-gharib">View speaker profile &rarr;</a>
+        </div>
+      </div>
+
+      <p class="venues"><strong>Past appearances:</strong> Filipino American International Book Festival, Emirates Literature Festival, The Muse and the Marketplace, Unbound Book Festival, Massachusetts Independent Comics Festival, Short Run Comix Festival and The Small Press Expo. <strong>Workshops:</strong> Weill Cornell Medicine, Vanderbilt University, University of California, Riverside, San Diego State University, George Washington University and more.</p>
+
+      <h3 style="margin-top:2em">To arrange a speaking engagement</h3>
+      <p>Contact Christie Hinrichs at <a href="mailto:christie@authorsunbound.com">christie@authorsunbound.com</a>, or send an inquiry below.</p>
+
+      <!--
+        FORM SETUP: sign up at formspree.io (or web3forms.com), create a form,
+        and replace the action URL below with your endpoint.
+      -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <label>Name
+          <input type="text" name="name" required autocomplete="name">
+        </label>
+        <label>Email
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label>Organization
+          <input type="text" name="organization" autocomplete="organization">
+        </label>
+        <label>Inquiry type
+          <select name="inquiry_type">
+            <option>Speaking engagement</option>
+            <option>Workshop</option>
+            <option>Media / press</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Message
+          <textarea name="message" required placeholder="Event name, date, audience size, and anything else that helps."></textarea>
+        </label>
+        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn" type="submit">Send inquiry</button>
+        <p class="note">Speaking requests may be forwarded to Malaka's speaker representatives.</p>
+      </form>
+
+      <p style="margin-top:2.2em"><strong>Literary representation:</strong> <a href="https://lgrliterary.com/who-we-are/team/daniel-greenberg/">Daniel Greenberg, LGR Literary Agency</a></p>
+    </div>
+  </section>
+
+  <!-- TEDX -->
+  <section id="talk">
+    <div class="wrap">
+      <h2>Watch my TEDx talk</h2>
+      <p>How to find a better version of your life story.</p>
+      <!--
+        TO EMBED: replace the placeholder div below with:
+        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="TEDx talk" allowfullscreen></iframe>
+      -->
+      <div class="video">Video embed goes here</div>
+    </div>
+  </section>
+
+  <!-- SELECTED WORKS -->
+  <section id="work">
+    <div class="wrap">
+      <h2>Selected Works</h2>
+      <p><a href="https://www.npr.org/people/469106148/malaka-gharib">Read my NPR reporting &rarr;</a></p>
+      <div class="works">
+
+        <div>
+          <h3>Comics</h3>
+          <ul>
+            <li><a href="https://www.latimes.com/opinion/story/2021-11-28/comic-cerritos-high-school-race">Why didn't we talk about race in high school?</a> <small>The Los Angeles Times</small></li>
+            <li><a href="https://www.newyorker.com/humor/daily-shouts/how-to-guilt-people-into-wearing-a-face-mask">How To Guilt People Into Wearing A Mask</a> <small>The New Yorker</small></li>
+            <li><a href="https://www.npr.org/sections/goatsandsoda/2020/04/18/836770847/comic-looking-for-a-helper-in-the-age-of-coronavirus">Looking For A 'Helper' In The Age Of Coronavirus</a> <small>NPR</small></li>
+            <li><a href="https://thenib.com/the-colonial-roots-of-cheese-pimiento/">The Colonial Roots Of Cheese Pimiento</a> <small>The Nib</small></li>
+            <li><a href="https://www.npr.org/sections/goatsandsoda/2023/08/27/1195966057/comic-in-the-90s-i-survived-summers-in-egypt-with-no-ac-how-would-it-feel-now">In the '90s I survived summers in Egypt with no AC. How would it feel now?</a> <small>NPR</small></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Audio</h3>
+          <ul>
+            <li><a href="https://www.npr.org/2022/05/17/1099446128/the-utang-clan">The Utang Clan</a> <small>NPR Code Switch</small></li>
+            <li><a href="https://www.npr.org/sections/health-shots/2018/11/22/669960524/how-i-learned-to-talk-to-my-filipino-mom-about-my-mental-health">How I Learned To Talk To My Filipino Mom About Mental Health</a> <small>NPR</small></li>
+            <li><a href="https://www.npr.org/2019/12/30/792439555/making-art-is-good-for-your-health-heres-how-to-start-a-habit">Making Art Is Good For Your Health. Here's How To Start A Habit</a> <small>NPR Life Kit</small></li>
+            <li><a href="https://www.npr.org/2023/01/05/1147239071/dont-get-art-you-might-be-looking-at-it-wrong">How to look at art</a> <small>NPR Life Kit</small></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Reporting</h3>
+          <ul>
+            <li><a href="https://www.npr.org/sections/health-shots/2023/11/24/1214534579/images-war-gaza-israel-vicarious-trauma-stress">Watching war unfold is distressing. Here's how to protect your mental health</a> <small>NPR</small></li>
+            <li><a href="https://www.npr.org/sections/goatsandsoda/2022/05/18/1099537331/fighting-the-horror-of-wartime-rape-nobel-prize-peace-winner-wont-give-up-hope">Fighting the horror of wartime rape, Nobel Peace Prize winner won't give up hope</a> <small>NPR</small></li>
+            <li><a href="https://www.npr.org/sections/goatsandsoda/2022/04/17/1084492602/photos-how-this-bolivian-all-female-skate-crew-is-celebrating-their-indigenous-r">How this Bolivian all-female skate crew is celebrating their Indigenous roots</a> <small>NPR</small></li>
+            <li><a href="https://www.npr.org/sections/goatsandsoda/2022/03/21/1087874147/comic-how-children-are-coping-in-ukraine-and-how-parents-can-help">The war is taking a toll on Ukraine's kids. Psychologists share how parents can help</a> <small>NPR</small></li>
+            <li><a href="https://www.npr.org/sections/goatsandsoda/2022/03/04/1084230259/not-every-war-gets-the-same-coverage-as-russias-invasion-and-that-has-consequenc">Not every war gets the same coverage as Russia's invasion, and that has consequences</a> <small>NPR</small></li>
+            <li><a href="https://www.npr.org/sections/goatsandsoda/2021/09/29/1039417879/why-peter-singer-the-drowning-child-ethicist-is-giving-away-his-1-million-prize">Why Peter Singer, The 'Drowning Child' Ethicist, Is Giving Away His $1 Million Prize</a> <small>NPR</small></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Interactive journalism</h3>
+          <ul>
+            <li><a href="https://www.npr.org/2023/01/19/1150101665/practical-tips-for-exercising-in-the-cold">A paper doll about how to run in the cold</a></li>
+            <li><a href="https://www.npr.org/2024/04/23/1196979098/how-to-have-a-happy-birthday">A cake-shaped zine about how to have a happy birthday</a></li>
+            <li><a href="https://www.npr.org/2023/01/17/1144849154/climate-change-kids-guide">A printable comic for kids about climate change</a></li>
+            <li><a href="https://www.npr.org/sections/goatsandsoda/2021/02/19/968404983/why-is-a-red-stain-a-disaster-tips-on-fighting-period-stigma-plus-a-zine">A zine about how to fight menstrual stigma</a></li>
+            <li><a href="https://www.npr.org/2022/12/16/1143623199/how-to-be-a-better-movie-watcher-according-to-film-critics">A brochure about how to be a better movie watcher</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><a href="https://instagram.com/malakagharib">Instagram</a> &middot; <a href="https://www.npr.org/people/469106148/malaka-gharib">NPR</a> &middot; <a href="#speaking">Speaking inquiries</a></p>
+    <p>&copy; <span id="yr"></span> Malaka Gharib</p>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
